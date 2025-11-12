@@ -1,0 +1,103 @@
+body {
+  width: 100%;
+  height: 18.75rem;
+  position: relative;
+  background-color: gainsboro;
+  perspective: 62.5rem;
+}
+div {
+  box-sizing: border-box;
+  margin: 0.08rem;
+  border-radius: 10%;
+  border: 0.0938rem solid aliceblue;
+}
+.cube {
+  position: absolute;
+  margin: 0 auto;
+  top: 5rem;
+  width: 6.25rem;
+  height: 6.25rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-3.125rem) rotateX(-20deg) rotateY(20deg);
+  animation: spin 8s linear infinite;
+  border: none;
+}
+.cube:hover {
+  animation-play-state: paused;
+}
+.front,
+.behind,
+.top,
+.bottom,
+.left,
+.right {
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: 33% 33% 33%;
+  position: absolute;
+  width: 6.25rem;
+  height: 6.25rem;
+  box-sizing: border-box;
+}
+.front {
+  transform: translateZ(3.125rem);
+  /* 前 */
+}
+.f {
+  background-color: rgba(255, 165, 0, 0.99);
+}
+.behind {
+  transform: rotateY(180deg) translateZ(3.125rem);
+  /* 后 */
+}
+.be {
+  background-color: rgba(255, 0, 0, 0.99);
+}
+.right {
+  transform: rotateY(90deg) translateZ(3.125rem);
+  /* 右 */
+}
+.r {
+  background-color: rgba(0, 128, 0, 0.99);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(3.125rem);
+  /* 左 */
+}
+.l {
+  background-color: rgba(0, 0, 255, 0.99);
+}
+.top {
+  transform: rotateX(90deg) translateZ(3.125rem);
+  /* 上 */
+}
+.t {
+  font-size: 1.25rem;
+  color: blueviolet;
+  background-color: rgba(255, 255, 255, 0.99);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Moon Stars Kai T HW";
+  font-weight: "700";
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(3.125rem);
+  /* 下 */
+  box-shadow: 0rem 0rem 1.875rem 0rem rgba(0, 0, 0, 0.75);
+}
+.bo {
+  background-color: rgba(255, 255, 0, 0.99);
+}
+@keyframes spin {
+  from {
+    transform: translateZ(-3.125rem) rotateX(-30deg) rotateY(0deg);
+  }
+  to {
+    transform: translateZ(-3.125rem) rotateX(-30deg) rotateY(360deg);
+  }
+}
+.spin:hover {
+  animation-play-state: paused;
+}
